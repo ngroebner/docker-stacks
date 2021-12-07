@@ -51,51 +51,10 @@ Docker destroys the container after notebook server exit, but any files written 
 docker run --rm -p 10000:8888 -e JUPYTER_ENABLE_LAB=yes -v "${PWD}":/home/jovyan/work jupyter/datascience-notebook:33add21fab64
 ```
 
-## Contributing
+## This might be helpful
 
-Please see the [Contributor Guide on ReadTheDocs](https://jupyter-docker-stacks.readthedocs.io/) for
-information about how to contribute package updates, recipes, features, tests, and community
-maintained stacks.
-
-## Maintainer Help Wanted
-
-We value all positive contributions to the Docker stacks project,
-from [bug reports](https://jupyter-docker-stacks.readthedocs.io/en/latest/contributing/issues.html)
-to [pull requests](https://jupyter-docker-stacks.readthedocs.io/en/latest/contributing/packages.html)
-to [translations](https://jupyter-docker-stacks.readthedocs.io/en/latest/contributing/translations.html)
-to help answering questions.
-We'd also like to invite members of the community to help with two maintainer activities:
-
-- Issue triage: Reading and providing a first response to issues, labeling issues appropriately,
-  redirecting cross-project questions to Jupyter Discourse
-- Pull request reviews: Reading proposed documentation and code changes, working with the submitter
-  to improve the contribution, deciding if the contribution should take another form (e.g., a recipe
-  instead of a permanent change to the images)
-
-Anyone in the community can jump in and help with these activities at any time
-We will happily grant additional permissions (e.g., ability to merge PRs) to anyone who shows an on-going interest in working on the project.
-
-## Jupyter Notebook Deprecation Notice
-
-Following [Jupyter Notebook notice](https://github.com/jupyter/notebook#notice), we encourage users to transition to JupyterLab.
-This can be done by passing the environment variable `JUPYTER_ENABLE_LAB=yes` at container startup,
-more information is available in the [documentation](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#docker-options).
-
-At some point, JupyterLab will become the default for all of the Jupyter Docker stack images, however a new environment variable will be introduced to switch back to Jupyter Notebook if needed.
-
-After the change of default, and according to the Jupyter Notebook project status and its compatibility with JupyterLab,
-these Docker images may remove the classic Jupyter Notebook interface altogether in favor of another _classic-like_ UI built atop JupyterLab.
-
-This change is tracked in the issue [#1217](https://github.com/jupyter/docker-stacks/issues/1217), please check its content for more information.
-
-## Alternatives
-
-- [jupyter/repo2docker](https://github.com/jupyter/repo2docker) - Turn git repositories into
-  Jupyter-enabled Docker Images
 - [openshift/source-to-image](https://github.com/openshift/source-to-image) - A tool for
   building/building artifacts from source and injecting into docker images
-- [jupyter-on-openshift/jupyter-notebooks](https://github.com/jupyter-on-openshift/jupyter-notebooks) -
-  OpenShift compatible S2I builder for basic notebook images
 
 ## Resources
 
@@ -105,9 +64,6 @@ This change is tracked in the issue [#1217](https://github.com/jupyter/docker-st
 - [Jupyter Website](https://jupyter.org)
 - [Images on DockerHub](https://hub.docker.com/u/jupyter)
 
-## CPU Architectures
-
-All published containers support amd64 (x86_64) and aarch64, except for datascience and tensorflow, which only support amd64 for now.
 
 ### Caveats for arm64 images
 
