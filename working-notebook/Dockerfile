@@ -1,10 +1,10 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-ARG OWNER=jupyter
-ARG BASE_CONTAINER=$OWNER/minimal-notebook
+ARG OWNER=ngroebner
+ARG BASE_CONTAINER=$OWNER/minimal-notebook:v0.1
 FROM $BASE_CONTAINER
 
-LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
+LABEL maintainer="Nate Groebner <groe0029@umn.edu>"
 
 USER root
 
@@ -16,7 +16,7 @@ RUN apt-get update --yes && \
 USER ${NB_UID}
 
 # Install Python 3 packages
-RUN mamba install --quiet --yes \
+RUN mamba install -c conda-forge  --yes \
     'altair' \
     'beautifulsoup4' \
     'bokeh' \
@@ -25,6 +25,7 @@ RUN mamba install --quiet --yes \
     'conda-forge::blas=*=openblas' \
     'cython' \
     'dask' \
+    'https://conda.anaconda.org/conda-forge/linux-64/dask-gateway-0.9.0-py39hf3d152e_2.tar.bz2#57f015b6de515b0d5fb7827a62de8fdd' \
     'dill' \
     'h5py' \
     'ipympl'\

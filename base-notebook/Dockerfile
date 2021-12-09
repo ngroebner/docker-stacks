@@ -7,7 +7,7 @@ ARG ROOT_CONTAINER=ubuntu:focal
 
 FROM $ROOT_CONTAINER
 
-LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
+LABEL maintainer="Nate Groebner <groe0029@umn.edu>"
 ARG NB_USER="nbuser"
 ARG NB_UID="1000"
 ARG NB_GID="100"
@@ -69,7 +69,7 @@ RUN echo "auth requisite pam_deny.so" >> /etc/pam.d/su && \
     fix-permissions "${CONDA_DIR}"
 
 USER ${NB_UID}
-ARG PYTHON_VERSION=default
+ARG PYTHON_VERSION=3.9
 
 # Setup work directory for backward-compatibility
 RUN mkdir "/home/${NB_USER}/work" && \
