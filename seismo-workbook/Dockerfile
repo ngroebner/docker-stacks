@@ -25,7 +25,7 @@ RUN mamba install -c conda-forge  --yes \
     'conda-forge::blas=*=openblas' \
     'cython' \
     'dask' \
-    #'dask-gateway' \
+    'dask-gateway' \
     'dill' \
     'h5py' \
     'ipympl'\
@@ -33,7 +33,7 @@ RUN mamba install -c conda-forge  --yes \
     'matplotlib-base' \
     'numba' \
     'numexpr' \
-    #'obspy' \
+    'obspy' \
     'pandas' \
     'patsy' \
     'protobuf' \
@@ -51,7 +51,7 @@ RUN mamba install -c conda-forge  --yes \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
 
-RUN python -m pip install dask-gateway #obspy
+#RUN python -m pip install dask-gateway #obspy
 # Install specufex
 
 COPY ./specufex/SpecUFEx-0.1.0-py3-none-any.whl .
