@@ -27,6 +27,9 @@ RUN mamba install -c conda-forge  --yes \
     'dask' \
     'dask-gateway' \
     'dill' \
+    'fsspec' \
+    'gcsfs' \
+    'graphiviz' \
     'h5py' \
     'ipympl'\
     'ipywidgets' \
@@ -46,7 +49,8 @@ RUN mamba install -c conda-forge  --yes \
     'statsmodels' \
     'sympy' \
     'widgetsnbextension'\
-    'xlrd' && \
+    'xlrd' \
+    'zarr' && \
     mamba clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
@@ -57,6 +61,8 @@ RUN mamba install -c conda-forge  --yes \
 COPY ./specufex/SpecUFEx-0.1.0-py3-none-any.whl .
 RUN python -m pip install SpecUFEx-0.1.0-py3-none-any.whl
 RUN rm SpecUFEx-0.1.0-py3-none-any.whl
+
+RUN python -m pip install line_profiler tsfresh
 
 
 # Import matplotlib the first time to build the font cache.
