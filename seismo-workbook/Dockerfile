@@ -24,8 +24,9 @@ RUN mamba install -c conda-forge  --yes \
     'cloudpickle' \
     'conda-forge::blas=*=openblas' \
     'cython' \
-    'dask' \
-    'dask-gateway' \
+    'dask==2.30.0' \
+    'dask-gateway==0.9.0' \
+    'dask-distributed==2.30.1' \
     'dill' \
     'fsspec' \
     'gcsfs' \
