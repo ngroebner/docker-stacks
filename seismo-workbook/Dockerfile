@@ -29,7 +29,7 @@ RUN mamba install -c conda-forge  --yes \
     'dill' \
     'fsspec' \
     'gcsfs' \
-    'graphiviz' \
+    'graphviz' \
     'h5py' \
     'ipympl'\
     'ipywidgets' \
